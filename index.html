@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; 
+                   script-src 'self'; 
+                   style-src 'self'; 
+                   img-src 'self' https://img.shields.io; 
+                   connect-src 'self'; 
+                   font-src 'self'; 
+                   object-src 'none'; 
+                   base-uri 'self'; 
+                   form-action 'none'; 
+                   frame-ancestors 'none';">
+    <title>Sumimi's Projects Hub</title>
+    <meta name="description" content="ゆるい開発と学習の記録 - Modern C++を中心とした学習プロジェクト集">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="header-title">🚀 Sumimi's Projects Hub</h1>
+            <p class="header-subtitle">ゆるい開発と学習の記録 - Modern C++を中心に</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- 統計情報 -->
+        <section class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="total-projects">0</div>
+                <div class="stat-label">プロジェクト</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="total-categories">0</div>
+                <div class="stat-label">カテゴリ</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="total-stars">0</div>
+                <div class="stat-label">⭐ Stars</div>
+            </div>
+        </section>
+
+        <!-- 検索・フィルタ -->
+        <section class="controls">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="🔍 プロジェクトを検索..." class="search-input">
+            </div>
+
+            <div class="filters">
+                <select id="category-filter" class="filter-select">
+                    <option value="">すべてのカテゴリ</option>
+                </select>
+
+                <select id="difficulty-filter" class="filter-select">
+                    <option value="">すべての難易度</option>
+                    <option value="1">入門</option>
+                    <option value="2">初級</option>
+                    <option value="3">中級</option>
+                    <option value="4">上級</option>
+                    <option value="5">エキスパート</option>
+                </select>
+
+                <select id="sort-select" class="filter-select">
+                    <option value="number">番号順</option>
+                    <option value="stars">Stars順</option>
+                    <option value="updated">更新日順</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- プロジェクト一覧 -->
+        <section class="projects" id="projects-container">
+            <div class="loading">📦 プロジェクトを読み込み中...</div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 sumimi. All rights reserved.</p>
+            <p class="footer-updated">Last updated: <span id="last-updated">-</span></p>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

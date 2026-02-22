@@ -1,0 +1,9 @@
+# プロジェクトリスト
+# 形式: {username}/{repository}
+# 
+# 例:
+# sumimi/modern-cpp-template-learnkit
+# sumimi/project-002
+# sumimi/project-003
+
+sumimi/modern-cpp-template-learnkit
