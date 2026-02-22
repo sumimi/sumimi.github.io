@@ -45,7 +45,21 @@ sumimi.github.io/
 
 ## 🚀 セットアップ
 
-### 1. リポジトリをGitHubにプッシュ
+### 前提条件
+
+- Git がインストールされていること
+- Python 3.7 以上がインストールされていること
+- GitHubアカウントを持っていること
+
+### 1. 依存関係のインストール
+
+Python パッケージをインストールします：
+
+```bash
+pip install requests pyyaml
+```
+
+### 2. リポジトリをGitHubにプッシュ
 
 ```bash
 cd /path/to/sumimi.github.io
@@ -56,7 +70,7 @@ git branch -M main
 git push -u origin main
 ```
 
-### 2. GitHub Pages を有効化
+### 3. GitHub Pages を有効化
 
 1. GitHubリポジトリの **Settings** > **Pages** に移動
 2. **Source** を `main` ブランチの `/root` に設定
@@ -64,7 +78,26 @@ git push -u origin main
 
 数分後、 `https://sumimi.github.io/` でサイトが公開されます。
 
-### 3. プロジェクトを追加
+### 4. 初回のメタデータ生成
+
+初回公開時は `projects.json` を生成する必要があります：
+
+**方法1: ローカルで生成（推奨）**
+
+```bash
+python3 scripts/fetch-metadata.py
+git add projects.json
+git commit -m "Add initial projects metadata"
+git push
+```
+
+**方法2: GitHub Actions で生成**
+
+1. https://github.com/sumimi/sumimi.github.io/actions に移動
+2. 「Update Projects Metadata」ワークフローを選択
+3. 「Run workflow」をクリック
+
+### 5. プロジェクトを追加
 
 `projects-list.txt` に新しいプロジェクトのリポジトリを追加：
 
@@ -135,14 +168,14 @@ GitHub Actions により、以下のタイミングでメタデータが自動�
 ### メタデータ収集のテスト
 
 ```bash
-# 依存関係をインストール
+# 依存関係をインストール（初回のみ）
 pip install requests pyyaml
 
 # メタデータ収集を実行
-python scripts/fetch-metadata.py
+python3 scripts/fetch-metadata.py
 
 # 生成された projects.json を確認
-cat projects.json
+cat projects.json | jq .  # jq がインストールされている場合
 ```
 
 ### ローカルサーバーで表示確認
@@ -154,6 +187,89 @@ python3 -m http.server 8000
 # ブラウザで開く
 # http://localhost:8000
 ```
+
+---
+
+## 🔒 セキュリティ機能
+
+このプロジェクトには、以下のセキュリティ対策が実装されています：
+
+### フロントエンド
+- **XSS対策**: すべてのユーザーデータをHTMLエスケープ
+- **URLサニタイゼーション**: 危険なURLスキーム（`javascript:`, `data:` など）をブロック
+- **CSP（Content Security Policy）**: 厳格なポリシーで外部リソースを制限
+- **Reverse Tabnabbing対策**: 外部リンクに `rel="noopener noreferrer"` を設定
+
+### バックエンド
+- **入力検証**: メタデータの型チェック・長さ制限・範囲制限
+- **URLプロトコル検証**: http/https のみ許可
+- **安全なYAMLパース**: `yaml.safe_load()` を使用
+
+### インフラ
+- **最小権限の原則**: GitHub Actions の権限を必要最小限に制限
+- **トークン管理**: 環境変数とSecrets で適切に管理
+
+---
+
+## 🐛 トラブルシューティング
+
+### サイトに「プロジェクトの読み込みに失敗しました」と表示される
+
+**原因**: `projects.json` が存在しないか、正しく生成されていない
+
+**解決方法**:
+
+1. ローカルでメタデータを生成:
+   ```bash
+   python3 scripts/fetch-metadata.py
+   git add projects.json
+   git commit -m "Add projects metadata"
+   git push
+   ```
+
+2. または GitHub Actions を手動実行:
+   - https://github.com/sumimi/sumimi.github.io/actions
+   - 「Update Projects Metadata」を実行
+
+### `projects.json` が Git に追跡されない
+
+**原因**: `.gitignore` に `projects.json` が含まれている
+
+**解決方法**: `.gitignore` から `projects.json` の行を削除してください。このファイルはGitHub Pagesで必須です。
+
+### Python 依存関係のインストールエラー
+
+```bash
+# ユーザー環境にインストール
+pip install --user requests pyyaml
+
+# または仮想環境を使用
+python3 -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+pip install requests pyyaml
+```
+
+### GitHub Actions が失敗する
+
+1. **Actions タブ**で詳細なエラーログを確認
+2. **Permissions** が正しく設定されているか確認:
+   - Settings > Actions > General > Workflow permissions
+   - 「Read and write permissions」を選択
+
+---
+
+## 💡 重要な注意事項
+
+### `projects.json` について
+
+- ⚠️ **`.gitignore` に含めないでください**
+- このファイルはGitHub Pagesで必須です
+- GitHub Actions が自動生成しますが、Git に追跡される必要があります
+
+### GitHub Actions の権限
+
+- ワークフローには `contents: write` 権限が必要です
+- `projects.json` を自動コミットするために使用されます
 
 ---
 
@@ -188,5 +304,3 @@ python3 -m http.server 8000
 ## 📄 ライセンス
 
 MIT License
-
----
