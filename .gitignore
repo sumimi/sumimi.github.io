@@ -23,9 +23,6 @@ env/
 .DS_Store
 Thumbs.db
 
-# Generated files
-projects.json
-
 # Logs
 *.log
 
