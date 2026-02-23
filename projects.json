@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-02-22T15:10:51.988817+09:00",
-  "total_count": 1,
+  "generated_at": "2026-02-23T00:09:48.200300+00:00",
+  "total_count": 2,
   "projects": [
     {
       "number": 1,
@@ -34,7 +34,39 @@
       "repo": "sumimi/modern-cpp-template-learnkit",
       "stars": 0,
       "forks": 0,
-      "updated_at": "2026-02-22T05:03:20Z",
+      "updated_at": "2026-02-22T23:25:31Z",
+      "language": "C++"
+    },
+    {
+      "number": 2,
+      "id": "cpp20-modules-sandbox",
+      "slug": "cpp20-modules-sandbox",
+      "title": "C++20 Modules Sandbox",
+      "subtitle_ja": "ヘッダファイルに別れを告げる新時代のC++",
+      "subtitle_en": "Say goodbye to header files - Modern C++ with Modules",
+      "description_ja": "C++20で導入されたModulesの基礎から実践まで学ぶサンプルプロジェクト。ヘッダファイルの問題点を解決する新しいコード管理手法を体系的に習得できます。",
+      "description_en": "A sample project to learn C++20 Modules from basics to practice, mastering the new code management approach that solves header file problems.",
+      "category_ja": [
+        "C++",
+        "言語機能"
+      ],
+      "category_en": [
+        "C++",
+        "Language Features"
+      ],
+      "difficulty": 2,
+      "tags": [
+        "cpp20",
+        "modules",
+        "modern-cpp"
+      ],
+      "repo_url": "https://github.com/sumimi/cpp20-modules-sandbox",
+      "demo_url": "",
+      "hub": true,
+      "repo": "sumimi/cpp20-modules-sandbox",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-02-22T08:53:58Z",
       "language": "C++"
     }
   ]
