@@ -9,3 +9,4 @@
 sumimi/modern-cpp-template-learnkit
 sumimi/cpp20-modules-sandbox
 sumimi/copilot-commit-message-guidelines
+sumimi/modern-cpp-agent-skills
