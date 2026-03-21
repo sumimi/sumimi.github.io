@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-03-21T23:48:27.317086+00:00",
-  "total_count": 3,
+  "generated_at": "2026-03-21T23:52:42.840186+00:00",
+  "total_count": 4,
   "projects": [
     {
       "number": 1,
@@ -99,6 +99,44 @@
       "forks": 0,
       "updated_at": "2026-02-23T06:54:54Z",
       "language": null
+    },
+    {
+      "number": 4,
+      "id": "modern-cpp-agent-skills",
+      "slug": "modern-cpp-agent-skills",
+      "title": "Modern C++ Agent Skills",
+      "subtitle_ja": "Modern C++ 向け GitHub Copilot Agent Skills コレクション",
+      "subtitle_en": "GitHub Copilot Agent Skills Collection for Modern C++",
+      "description_ja": "アーキテクチャ設計・CMake・テスト・静的解析・ドキュメントなど7つのドメイン別 Agent Skills と、それらを参照するカスタムインストラクション（copilot-instructions.md）をセットで提供する Modern C++（C++17）プロジェクトテンプレート。",
+      "description_en": "A Modern C++ (C++17) project template bundling 7 domain-specific Agent Skills — covering architecture, CMake, testing, static analysis, and documentation — together with a custom instructions file (copilot-instructions.md) that references all skills.",
+      "category_ja": [
+        "Modern C++",
+        "GitHub Copilot",
+        "Agent Skills"
+      ],
+      "category_en": [
+        "Modern C++",
+        "GitHub Copilot",
+        "Agent Skills"
+      ],
+      "difficulty": 1,
+      "tags": [
+        "cpp17",
+        "github-copilot",
+        "agent-skills",
+        "cmake",
+        "googletest",
+        "clang-tidy",
+        "doxygen"
+      ],
+      "repo_url": "https://github.com/sumimi/modern-cpp-agent-skills",
+      "demo_url": "",
+      "hub": true,
+      "repo": "sumimi/modern-cpp-agent-skills",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-03-21T12:17:13Z",
+      "language": "C++"
     }
   ]
 }
