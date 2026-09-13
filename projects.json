@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-13T04:27:01.219858+00:00",
-  "total_count": 5,
+  "generated_at": "2026-09-13T07:45:01.224607+00:00",
+  "total_count": 6,
   "projects": [
     {
       "number": 1,
@@ -169,6 +169,34 @@
       "stars": 0,
       "forks": 0,
       "updated_at": "2026-03-29T08:35:41Z",
+      "language": "C++"
+    },
+    {
+      "number": 6,
+      "id": "copilot-custom-agent-learnkit",
+      "slug": "copilot-custom-agent-learnkit",
+      "title": "Copilot Custom Agent LearnKit",
+      "subtitle_ja": "GitHub Copilot カスタムエージェント学習キット",
+      "subtitle_en": "GitHub Copilot Custom Agent LearnKit",
+      "description_ja": "既存のソフトウェア開発プロセスに Custom Agent・Subagent・Agent Skills・Harness を組み込み、Markdown 設計変更から実装・検証までを段階的に学ぶハンズオン教材",
+      "description_en": "A hands-on guide to integrating Custom Agents, Subagents, Agent Skills, and Harnesses into existing software development workflows, from Markdown design changes through implementation and verification",
+      "category_ja": [
+        "GitHub Copilot"
+      ],
+      "category_en": [
+        "GitHub Copilot"
+      ],
+      "difficulty": 2,
+      "tags": [
+        "github-copilot"
+      ],
+      "repo_url": "https://github.com/sumimi/copilot-custom-agent-learnkit",
+      "demo_url": "",
+      "hub": true,
+      "repo": "sumimi/copilot-custom-agent-learnkit",
+      "stars": 0,
+      "forks": 0,
+      "updated_at": "2026-09-13T07:40:38Z",
       "language": "C++"
     }
   ]
